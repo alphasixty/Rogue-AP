@@ -31,7 +31,7 @@ $ sudo apt-get dist-upgrade
 
 ```bash
 
-$ Installation instructions here for both
+$ Will post later | but if I remember it was a git clone | either way you need both 
 
 ```
 
@@ -45,7 +45,9 @@ $ touch /etc/hostpad.conf
 
 ```
 
-#### Configure hostapd.conf - I used vim for this, doing this will also create the file if it is not there alredy. But use whatever editor you are comfortable with. 
+#### Configure hostapd.conf
+
+> I used vim for this. This will also create the file if it is not already there. But use whatever editor you are comfortable with. 
 
 ```bash
 
@@ -93,7 +95,7 @@ This had no affect on the initialization of the AP
 
 # Setting up DHCP
 
-> We are going to use dnsmasq to set DHCP
+> We are going to use dnsmasq to set up DHCP
 
 #### Configure dnsmasq.conf in /etc/dnsmasq.conf
 
@@ -142,7 +144,7 @@ $ route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.1.1
 ```
 
 > **Error Troubleshooting**  
-iptables/1.8.2 Failed to initialize nft: Protocol not supported##
+iptables/1.8.2 Failed to initialize nft: Protocol not supported
 
 ```bash
 
@@ -161,7 +163,7 @@ $ update-alternatives --set ebtables /usr/sbin/ebtables-legacy
 
 ```bash
 
-dnsmasq -C /etc/dnsmasq.conf -d
+$ dnsmasq -C /etc/dnsmasq.conf -d
 
 ```
 

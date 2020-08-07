@@ -61,8 +61,10 @@ $ sudo vim /etc/hostpad.conf
 
 #Sets the interface that will be the acting AP
 interface=[interface put in monitor mode]
+
 #Sets the appropriate driver
 driver=nl80211
+
 #Set ssid to whatever you want to broadcast
 ssid=[fake AP name]
 hw_mode=g

@@ -10,25 +10,31 @@ Run updates and check interface compatibility:
 
 ```bash
 
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get dist-upgrade
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get dist-upgrade
 
 ```
 >> Install hostapd and dnsmasq
+
+```bash
+
+$ Installation instructions here for both
+
+```
 
 >> Make sure you can put your wireless adapter in monitor mode
 
 ```bash
 
-ifconfig [interface] down
-iwconfig [interface] mode monitor
+$ ifconfig [interface] down
+$ iwconfig [interface] mode monitor
 
 ```
 
-##Use ifconfig to verify the adapter mode##
+>> Use ifconfig to verify the adapter mode
 
-Creating the AP:
+# Creating the AP:
 
 >> Create /etc/hostapd.conf
 
@@ -58,7 +64,7 @@ macaddr_acl=0
 ignore_broadcast_ssid=0
 >> Initiate fake AP >> hostapd /etc/hostapd.conf
 
-##Error Troubleshooting##
+>>> Error Troubleshooting
 ##Failed to restart hostapd.service:Unit hostapd.service is masked.
 
 ```

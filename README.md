@@ -1,10 +1,11 @@
 # Rogue-AP
-Method to create Rogue AP with Raspberry Pi 3+
+Instructions on how to create a Rogue AP with Raspberry Pi 3+
 
-Raspberry Pi 3+ Rogue AP
-Run updates and check interface compatibility:
+# Run updates and check interface compatibility:
 
->> Using Kali for this as it was already installed on my Pi’s - armv71 
+>> I am using Kali for this as it was already installed on my Pi 
+Architecture - armv71
+This will work on most Debian distros
 
 >> Update
 

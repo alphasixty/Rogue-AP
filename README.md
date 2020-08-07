@@ -14,7 +14,7 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get dist-upgrade
 
-```
+```bash
 >> Install hostapd and dnsmasq
 
 >> Make sure you can put your wireless adapter in monitor mode

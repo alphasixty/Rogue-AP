@@ -38,7 +38,13 @@ touch /etc/hostpad.conf
 
 ```
 
->> Configure hostapd.conf 
+>> Configure hostapd.conf - I used vim for this, doing this will also create the file if it is not there alredy. 
+
+```
+
+sudo vim /etc/hostpad.conf
+
+```
 
 #Sets the interface that will be the acting AP
 interface=[interface put in monitor mode]
@@ -55,12 +61,14 @@ ignore_broadcast_ssid=0
 ##Error Troubleshooting##
 ##Failed to restart hostapd.service:Unit hostapd.service is masked.
 
+```
+
 sudo systemctl unmask hostapd
 sudo systemctl enable hostapd
 sudo systemctl start hostapd
->> Failed to start Advanced IEEE 802.11…….. Probably because we did not put WPA params in the conf
 
->> This had no affect on the initialization of the AP
+```
+>> Failed to start Advanced IEEE 802.11…….. Probably because we did not put WPA params in the conf || This had no affect on the initialization of the AP
 
 DHCP:
 

@@ -99,17 +99,29 @@ log-queries
 log-dhcp
 >> Assign the gateway and netmask to the interface 
 
+```
+
 ifconfig [interface] up 192.168.1.1 netmask 255.255.255.0
+
+```
+
 >> Add to routing table
 
+```
 route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.1.1
+
+```
 ##Error Troubleshooting##
 ##iptables/1.8.2 Failed to initialize nft: Protocol not supported##
+
+```
 
 update-alternatives --set iptables /usr/sbin/iptables-legacy
 update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
 update-alternatives --set arptables /usr/sbin/arptables-legacy
 update-alternatives --set ebtables /usr/sbin/ebtables-legacy
+
+```
 
 ##################################################################################################
 Most likely though you just need to restart after running all updates and upgrades, as the kernel
@@ -118,22 +130,41 @@ was probably updated.
 >> Start dnsmasq server protocol
 
 #-C flag specifies the conf file and -d is debug mode, stops dnsmasq from forking into the background
+
+```
 dnsmasq -C /etc/dnsmasq.conf -d
+
+```
 Route traffic:
 
 >> Traffic forwarding to give internet access to the clients that are connecting
 
 #
+```
+
 iptables --table nat --append POSTROUTING --out-interface [egress interface] -j MASQUERADE
 
+```
+
 #
+```
+
 iptables --append FORWARD --in-interface [interface that is in monitor] -j ACCEPT
 Enable IP forwarding
 
+```
+
 #Enables IP forwarding
+
+```
 echo 1 > /proc/sys/net/ipv4/ip_forward
+
+```
 
 ##Alternatively##
 
+```
 sysctl -w net.ipv4.ip_forward=1
 net.ipv4.ip_forward=1
+
+```

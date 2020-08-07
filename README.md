@@ -127,7 +127,7 @@ log-dhcp
 
 #### Assign the gateway and netmask to the interface 
 
-```
+```bash
 
 $ ifconfig [interface] up 192.168.1.1 netmask 255.255.255.0
 
@@ -135,7 +135,8 @@ $ ifconfig [interface] up 192.168.1.1 netmask 255.255.255.0
 
 #### Add to routing table
 
-```
+```bash
+
 $ route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.1.1
 
 ```
@@ -158,10 +159,12 @@ $ update-alternatives --set ebtables /usr/sbin/ebtables-legacy
 
 #### The -C flag specifies the conf file and -d flag is for debug mode, it stops dnsmasq from forking into the background
 
-```
+```bash
+
 dnsmasq -C /etc/dnsmasq.conf -d
 
 ```
+
 # Route traffic:
 
 > Traffic forwarding to give internet access to the clients that are connecting to the AP
@@ -172,7 +175,7 @@ $ iptables --table nat --append POSTROUTING --out-interface [egress interface] -
 
 ```
 
-# Enables IP forwarding
+# Enable IP forwarding
 
 ```bash
 
@@ -180,10 +183,9 @@ $ iptables --append FORWARD --in-interface [interface that is in monitor] -j ACC
 
 ```
 
-# Need to figure out exactly what below does and log it here
+```bash
 
-```
-echo 1 > /proc/sys/net/ipv4/ip_forward
+$ echo 1 > /proc/sys/net/ipv4/ip_forward
 
 ```
 

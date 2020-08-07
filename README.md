@@ -70,7 +70,7 @@ ignore_broadcast_ssid=0
 
 ```
 
-####Initiate fake AP
+# Initiate fake AP
 
 ```bash
 
@@ -152,48 +152,46 @@ $ update-alternatives --set ebtables /usr/sbin/ebtables-legacy
 
 ```
 
-##################################################################################################
-Most likely though you just need to restart after running all updates and upgrades, as the kernel
-was probably updated.
-###################################################################################################
->> Start dnsmasq server protocol
+> Most likely though you just need to restart after running all updates and upgrades, as the kernel was probably updated.
 
-#-C flag specifies the conf file and -d is debug mode, stops dnsmasq from forking into the background
+# Start dnsmasq server protocol
+
+#### The -C flag specifies the conf file and -d flag is for debug mode, it stops dnsmasq from forking into the background
 
 ```
 dnsmasq -C /etc/dnsmasq.conf -d
 
 ```
-Route traffic:
+# Route traffic:
 
->> Traffic forwarding to give internet access to the clients that are connecting
+> Traffic forwarding to give internet access to the clients that are connecting to the AP
 
-#
-```
+```bash
 
-iptables --table nat --append POSTROUTING --out-interface [egress interface] -j MASQUERADE
-
-```
-
-#
-```
-
-iptables --append FORWARD --in-interface [interface that is in monitor] -j ACCEPT
-Enable IP forwarding
+$ iptables --table nat --append POSTROUTING --out-interface [egress interface] -j MASQUERADE
 
 ```
 
-#Enables IP forwarding
+# Enables IP forwarding
+
+```bash
+
+$ iptables --append FORWARD --in-interface [interface that is in monitor] -j ACCEPT
+
+```
+
+# Need to figure out exactly what below does and log it here
 
 ```
 echo 1 > /proc/sys/net/ipv4/ip_forward
 
 ```
 
-##Alternatively##
+> Alternatively
 
-```
-sysctl -w net.ipv4.ip_forward=1
-net.ipv4.ip_forward=1
+```bash
+
+$ sysctl -w net.ipv4.ip_forward=1
+$ net.ipv4.ip_forward=1
 
 ```

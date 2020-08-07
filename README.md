@@ -8,7 +8,7 @@ Run updates and check interface compatibility:
 
 >> Update
 
-```
+```bash
 
 sudo apt-get update
 sudo apt-get upgrade

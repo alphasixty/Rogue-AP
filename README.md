@@ -90,7 +90,7 @@ $ sudo systemctl enable hostapd
 $ sudo systemctl start hostapd
 
 ```
->> Failed to start Advanced IEEE 802.11…….. Probably because we did not put WPA params in the conf  
+> Failed to start Advanced IEEE 802.11…….. Probably because we did not put WPA params in the conf  
 This had no affect on the initialization of the AP
 
 # Setting up DHCP

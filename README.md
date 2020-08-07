@@ -39,7 +39,7 @@ $ Will post later | but if I remember it was a git clone | either way you need b
 
 #### Create /etc/hostapd.conf
 
-```
+```bash
 
 $ touch /etc/hostpad.conf
 

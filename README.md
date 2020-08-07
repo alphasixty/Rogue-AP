@@ -1,30 +1,13 @@
 # Rogue-AP
 Instructions on how to create a Rogue AP with Raspberry Pi 3+
 
-# Run updates and check interface compatibility:
-
->> I am using Kali for this as it was already installed on my Pi  
+> I am using Kali for this as it was already installed on my Pi  
 Architecture - armv71  
 This will work on most Debian distros
 
->> Update
+# Check interface compatibility and run updates:
 
-```bash
-
-$ sudo apt-get update
-$ sudo apt-get upgrade
-$ sudo apt-get dist-upgrade
-
-```
->> Install hostapd and dnsmasq
-
-```bash
-
-$ Installation instructions here for both
-
-```
-
->> Make sure you can put your wireless adapter in monitor mode
+#### Make sure you can put your wireless adapter in monitor mode:
 
 ```bash
 
@@ -33,11 +16,28 @@ $ iwconfig [interface] mode monitor
 
 ```
 
->> Use ifconfig to verify the adapter mode
+> Use ifconfig to verify the adapter mode otherwise this will not work
+
+#### Update your system:
+
+```bash
+
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get dist-upgrade
+
+```
+# Install hostapd and dnsmasq
+
+```bash
+
+$ Installation instructions here for both
+
+```
 
 # Creating the AP:
 
->> Create /etc/hostapd.conf
+####Create /etc/hostapd.conf
 
 ```
 
@@ -45,7 +45,7 @@ touch /etc/hostpad.conf
 
 ```
 
->> Configure hostapd.conf - I used vim for this, doing this will also create the file if it is not there alredy. 
+####Configure hostapd.conf - I used vim for this, doing this will also create the file if it is not there alredy. 
 
 ```
 
